@@ -18,7 +18,6 @@ export const post: RequestHandler = async ({ request }) => {
 		};
 	}
 
-	console.log('# json', json);
 	const user = await findLoginUser(json.email, json.password);
 	if (!user) {
 		return {
