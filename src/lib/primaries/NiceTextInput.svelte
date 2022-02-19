@@ -1,9 +1,9 @@
 <script lang="ts">
   // note: add any acceptable attr in need
 
-  export let disabled: boolean = false;
+  export let disabled = false;
   export let name: string;
-  export let readonly: boolean = false;
+  export let readonly = false;
   export let type: "text" | "email" | "password" = "text";
   export let value: string;
 

@@ -47,5 +47,5 @@ import VStack from '$lib/utils/VStack.svelte';
     border-style: none;
     margin: 0;
     padding: 0;
-}
+  }
 </style>
