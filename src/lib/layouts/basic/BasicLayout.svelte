@@ -37,4 +37,11 @@
     min-height: 100vh;
     margin: 0;
   }
+
+  /* TODO extract */
+  fieldset {
+    border-style: none;
+    margin: 0;
+    padding: 0;
+}
 </style>
