@@ -13,7 +13,7 @@
   <NiceTextInput
     name={name}
     type={type}
-    value={value}
+    bind:value={value}
   />
 </label>
 

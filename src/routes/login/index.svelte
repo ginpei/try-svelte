@@ -49,8 +49,18 @@ import { sleep } from "$lib/utils/time";
   <form on:submit={onSubmit}>
     <fieldset disabled={loggingIn}>
       <VStack>
-        <TextField label="Email" name="email" type="email" value={email} />
-        <TextField label="Password" name="password" type="password" value={password} />
+        <TextField
+          label="Email"
+          name="email"
+          type="email"
+          bind:value={email}
+        />
+        <TextField
+          label="Password"
+          name="password"
+          type="password"
+          bind:value={password}
+        />
         <NiceButton>Send</NiceButton>
       </VStack>
     </fieldset>
