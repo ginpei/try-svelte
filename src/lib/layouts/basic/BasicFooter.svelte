@@ -15,6 +15,7 @@
   .BasicFooter {
     border-top: thin dotted lightgray;
     margin-top: 5rem;
+    padding-bottom: 5rem;
     padding-top: 5rem;
   }
 </style>
