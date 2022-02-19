@@ -40,22 +40,22 @@
 	</Container>
 </header>
 
-<style>
+<style lang="scss">
 	.BasicHeader {
 		background-color: black;
 		color: white;
 		display: grid;
 		height: 2rem;
 		line-height: 2rem;
-	}
 
-	.BasicHeader a {
-		color: inherit;
-		text-decoration: none;
-	}
+		a {
+			color: inherit;
+			text-decoration: none;
 
-	.BasicHeader a:hover {
-		text-decoration: underline;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
 	}
 
 	.contents {
