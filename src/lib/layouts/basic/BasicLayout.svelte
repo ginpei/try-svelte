@@ -1,10 +1,11 @@
 <script lang="ts">
 	import BasicFooter from '$lib/layouts/basic/BasicFooter.svelte';
 	import Header from '$lib/layouts/basic/BasicHeader.svelte';
+import VStack from '$lib/utils/VStack.svelte';
   import BasicMainContents from './BasicMainContents.svelte';
 </script>
 
-<div class="BasicLayout">
+<VStack className="BasicLayout">
   <Header />
 
   <BasicMainContents>
@@ -12,7 +13,7 @@
   </BasicMainContents>
 
   <BasicFooter />
-</div>
+</VStack>
 
 <style global>
   @import '@fontsource/fira-mono';
@@ -35,6 +36,9 @@
 
   body {
     min-height: 100vh;
+  }
+
+  * {
     margin: 0;
   }
 

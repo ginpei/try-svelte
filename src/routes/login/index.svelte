@@ -41,17 +41,18 @@ import { sleep } from "$lib/utils/time";
   }
 </script>
 
-<BasicHeading>Login</BasicHeading>
-
-<form on:submit={onSubmit}>
-  <fieldset disabled={loggingIn}>
-    <VStack>
-      {#if loginError}
-        <ErrorBox error={loginError} />
-      {/if}
-      <TextField label="Email" name="email" type="email" value={email} />
-      <TextField label="Password" name="password" type="password" value={password} />
-      <NiceButton>Send</NiceButton>
-    </VStack>
-  </fieldset>
-</form>
+<VStack>
+  <BasicHeading>Login</BasicHeading>
+  {#if loginError}
+    <ErrorBox error={loginError} />
+  {/if}
+  <form on:submit={onSubmit}>
+    <fieldset disabled={loggingIn}>
+      <VStack>
+        <TextField label="Email" name="email" type="email" value={email} />
+        <TextField label="Password" name="password" type="password" value={password} />
+        <NiceButton>Send</NiceButton>
+      </VStack>
+    </fieldset>
+  </form>
+</VStack>

@@ -1,4 +1,8 @@
-<div class="VStack">
+<script lang="ts">
+  export let className = '';
+</script>
+
+<div class={`${className} VStack`}>
   <slot />
 </div>
 
