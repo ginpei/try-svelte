@@ -4,6 +4,7 @@
   export let error: unknown;
 
   const message = toError(error).message;
+  console.error(error);
 </script>
 
 <div class="ErrorBox">
