@@ -1,35 +1,35 @@
-import { findLoginUser, User } from '$lib/db/user';
-import type { RequestHandler } from '@sveltejs/kit';
+import { findLoginUser, User } from "$lib/db/user";
+import type { RequestHandler } from "@sveltejs/kit";
 
 export interface LoginApiRequest {
-	email: string;
-	password: string;
+  email: string;
+  password: string;
 }
 
 export interface LoginApiResponse {
-	user: User;
+  user: User;
 }
 
 export const post: RequestHandler = async ({ request }) => {
-	const json: LoginApiRequest = await request.json();
-	if (!json) {
-		return {
-			status: 400
-		};
-	}
+  const json: LoginApiRequest = await request.json();
+  if (!json) {
+    return {
+      status: 400,
+    };
+  }
 
-	const user = await findLoginUser(json.email, json.password);
-	if (!user) {
-		return {
-			status: 401
-		};
-	}
+  const user = await findLoginUser(json.email, json.password);
+  if (!user) {
+    return {
+      status: 401,
+    };
+  }
 
-	const resBody: LoginApiResponse = {
-		user
-	};
+  const resBody: LoginApiResponse = {
+    user,
+  };
 
-	return {
-		body: JSON.stringify(resBody)
-	};
+  return {
+    body: JSON.stringify(resBody),
+  };
 };
