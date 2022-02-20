@@ -7,8 +7,8 @@ import TextField from "$lib/complex/TextField.svelte";
 import { sleep } from "$lib/utils/time";
   import VStack from "$lib/utils/VStack.svelte";
 
-  let email = '';
-  let password = '';
+  let email = 'test@example.com';
+  let password = '123456';
   let loginError: Error | null = null;
   let loggingIn = false;
 
