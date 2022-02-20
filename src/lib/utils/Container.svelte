@@ -1,14 +1,14 @@
 <div class="Container">
-  <slot />
+	<slot />
 </div>
 
 <style>
-  .Container {
-    box-sizing: border-box;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    width: min(100%, 800px);
-  }
+	.Container {
+		box-sizing: border-box;
+		margin-left: auto;
+		margin-right: auto;
+		padding-left: 1rem;
+		padding-right: 1rem;
+		width: min(100%, 800px);
+	}
 </style>

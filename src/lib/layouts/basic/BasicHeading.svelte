@@ -1,7 +1,7 @@
 <script>
-  import NiceHeading from "$lib/primaries/NiceHeading.svelte";
+	import NiceHeading from '$lib/primaries/NiceHeading.svelte';
 </script>
 
 <NiceHeading>
-  <slot />
+	<slot />
 </NiceHeading>

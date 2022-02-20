@@ -11,25 +11,11 @@
 				<img class="titleLogo" src={logo} alt="Try Svelte" />
 			</a>
 			<nav class="linkList">
-				<a
-					class:active={$page.url.pathname === '/'}
-					href="/"
-					sveltekit:prefetch
-				>
-					Home
-				</a>
-				<a
-					class:active={$page.url.pathname === '/about'}
-					href="/about"
-					sveltekit:prefetch
-				>
+				<a class:active={$page.url.pathname === '/'} href="/" sveltekit:prefetch> Home </a>
+				<a class:active={$page.url.pathname === '/about'} href="/about" sveltekit:prefetch>
 					About
 				</a>
-				<a
-					class:active={$page.url.pathname === '/todos'}
-					href="/todos"
-					sveltekit:prefetch
-				>
+				<a class:active={$page.url.pathname === '/todos'} href="/todos" sveltekit:prefetch>
 					Todos
 				</a>
 			</nav>

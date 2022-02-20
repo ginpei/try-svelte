@@ -1,12 +1,12 @@
 <script lang="ts">
 	import { session } from '$app/stores';
-import { getUserById } from '$lib/db/user';
+	import { getUserById } from '$lib/db/user';
 	import BasicLayout from '$lib/layouts/basic/BasicLayout.svelte';
 
 	_initLoginUser();
 
 	async function _initLoginUser() {
-		if (typeof window === "undefined") {
+		if (typeof window === 'undefined') {
 			return;
 		}
 
@@ -14,7 +14,7 @@ import { getUserById } from '$lib/db/user';
 			// console.log('# session', values);
 		});
 
-		const userId = window.sessionStorage.getItem("userId");
+		const userId = window.sessionStorage.getItem('userId');
 		if (!userId) {
 			session.update((v) => ({ ...v, user: null }));
 			return;
