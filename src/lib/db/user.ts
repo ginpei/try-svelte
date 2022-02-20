@@ -20,3 +20,7 @@ export async function findLoginUser(email: string, password: string): Promise<Us
 
   return user;
 }
+
+export async function getUserById(id: string): Promise<User | null> {
+  return users.find((v) => v.id === id) ?? null;
+}

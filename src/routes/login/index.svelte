@@ -1,68 +1,20 @@
 <script lang="ts">
-  import ErrorBox from "$lib/complex/ErrorBox.svelte";
-import TextField from "$lib/complex/TextField.svelte";
-  import BasicHeading from "$lib/layouts/basic/BasicHeading.svelte";
-  import NiceButton from "$lib/primaries/NiceButton.svelte";
-  import { toError } from "$lib/utils/errors";
-import { sleep } from "$lib/utils/time";
-  import VStack from "$lib/utils/VStack.svelte";
+import { session } from "$app/stores";
+import type { User } from "$lib/db/user";
+import LoginPage from "./_LoginPage.svelte";
+import LogoutPage from "./_LogoutPage.svelte";
 
-  let email = 'test@example.com';
-  let password = '123456';
-  let loginError: Error | null = null;
-  let loggingIn = false;
+  let loginUser: User | null | undefined = undefined;
 
-  async function onSubmit(event: Event) {
-    event.preventDefault();
-
-    const data = { email, password };
-
-    loginError = null;
-    loggingIn = true;
-    try {
-      const [res] = await Promise.all([
-        fetch('/api/login', {
-          body: JSON.stringify(data),
-          method: 'POST',
-        }),
-        sleep(500),
-      ]);
-      if (!res.ok) {
-        throw new Error(`${res.status} ${res.statusText}`);
-      }
-
-      // TODO
-      console.log('# res', res);
-    } catch (error) {
-      loginError = toError(error);
-    } finally {
-      loggingIn = false;
-    }
-  }
+  session.subscribe(({ user }: { user: User | null }) => {
+    loginUser = user;
+  });
 </script>
 
-<VStack>
-  <BasicHeading>Login</BasicHeading>
-  {#if loginError}
-    <ErrorBox error={loginError} />
-  {/if}
-  <form on:submit={onSubmit}>
-    <fieldset disabled={loggingIn}>
-      <VStack>
-        <TextField
-          label="Email"
-          name="email"
-          type="email"
-          bind:value={email}
-        />
-        <TextField
-          label="Password"
-          name="password"
-          type="password"
-          bind:value={password}
-        />
-        <NiceButton>Send</NiceButton>
-      </VStack>
-    </fieldset>
-  </form>
-</VStack>
+{#if loginUser === undefined}
+  ...
+{:else if loginUser}
+  <LogoutPage />
+{:else}
+  <LoginPage />
+{/if}
