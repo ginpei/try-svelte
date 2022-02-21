@@ -4,6 +4,10 @@
   import LogoutPage from "./_LogoutPage.svelte";
 </script>
 
+<svelte:head>
+  <title>{$loginUser ? "Logout" : "Login"}</title>
+</svelte:head>
+
 {#if $loginUser}
   <LogoutPage />
 {:else}
