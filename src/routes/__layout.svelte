@@ -35,7 +35,7 @@
 {#if localLoginUser === undefined}
   Loading...
 {:else}
-  <BasicLayout>
+  <BasicLayout loginUser={$loginUser}>
     <slot />
   </BasicLayout>
 {/if}

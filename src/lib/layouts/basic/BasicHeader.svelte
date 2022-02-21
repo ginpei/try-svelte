@@ -1,7 +1,10 @@
 <script lang="ts">
   import { page } from "$app/stores";
+  import type { User } from "$lib/db/user";
   import Container from "$lib/utils/Container.svelte";
   import logo from "./svelte-logo.svg";
+
+  export let loginUser: User | null;
 </script>
 
 <header class="BasicHeader">
@@ -34,7 +37,11 @@
         </a>
       </nav>
       <div class="userTools">
-        <a href="/login">Login</a>
+        {#if loginUser}
+          <a href="/dashboard">{loginUser.email}</a>
+        {:else}
+          <a href="/login">Login</a>
+        {/if}
       </div>
     </div>
   </Container>
