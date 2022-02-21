@@ -1,7 +1,10 @@
 <script lang="ts">
-  import { session } from "$app/stores";
   import { getUserById } from "$lib/db/user";
   import BasicLayout from "$lib/layouts/basic/BasicLayout.svelte";
+  import { loginUser } from "../stores";
+
+  // undefined until it gets the first value; User or null
+  let localLoginUser: typeof $loginUser | undefined = undefined;
 
   _initLoginUser();
 
@@ -10,26 +13,29 @@
       return;
     }
 
-    session.subscribe((values) => {
-      // console.log('# session', values);
-    });
-
     const userId = window.sessionStorage.getItem("userId");
     if (!userId) {
-      session.update((v) => ({ ...v, user: null }));
+      loginUser.set(null);
+      localLoginUser = null;
       return;
     }
 
     const user = await getUserById(userId);
     if (!user) {
-      session.update((v) => ({ ...v, user: null }));
+      loginUser.set(null);
+      localLoginUser = null;
       return;
     }
 
-    session.update((v) => ({ ...v, user }));
+    loginUser.set(user);
+    localLoginUser = user;
   }
 </script>
 
-<BasicLayout>
-  <slot />
-</BasicLayout>
+{#if localLoginUser === undefined}
+  Loading...
+{:else}
+  <BasicLayout>
+    <slot />
+  </BasicLayout>
+{/if}
