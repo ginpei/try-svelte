@@ -1,7 +1,7 @@
 <script lang="ts">
   import { getUserById } from "$lib/db/user";
   import BasicLayout from "$lib/layouts/basic/BasicLayout.svelte";
-  import LoadingScreen from "$lib/layouts/loading/LoadingScreen.svelte";
+  import LoadingScreen from "$lib/screens/loading/LoadingScreen.svelte";
   import { loginUser } from "../stores";
 
   // undefined until it gets the first value; User or null
