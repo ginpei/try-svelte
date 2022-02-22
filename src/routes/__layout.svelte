@@ -8,6 +8,10 @@
   let localLoginUser: typeof $loginUser | undefined = undefined;
 
   initLoginUser((newLoginUser) => {
+    if (localLoginUser !== undefined) {
+      return;
+    }
+
     localLoginUser = newLoginUser;
   });
 </script>
@@ -18,7 +22,7 @@
   <!-- most pages requires login -->
   <LoginLayout />
 {:else}
-  <BasicLayout loginUser={$loginUser}>
+  <BasicLayout loginUser={localLoginUser}>
     <slot />
   </BasicLayout>
 {/if}

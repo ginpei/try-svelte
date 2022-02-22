@@ -6,7 +6,7 @@
   import BasicMainContents from "../common/BasicMainContents.svelte";
   import "../common/global.css";
 
-  export let loginUser: User | null;
+  export let loginUser: User;
 </script>
 
 <VStack className="BasicLayout">

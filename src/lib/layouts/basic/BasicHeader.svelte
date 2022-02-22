@@ -5,7 +5,7 @@
   import BasicHeaderNavItem from "./BasicNavBarLink.svelte";
   import logo from "../common/svelte-logo.svg";
 
-  export let loginUser: User | null;
+  export let loginUser: User;
 </script>
 
 <header class="BasicHeader">
@@ -35,13 +35,9 @@
         </BasicHeaderNavItem>
       </nav>
       <div class="userTools">
-        {#if loginUser}
-          <BasicHeaderNavItem href="/dashboard">
-            {loginUser.email}
-          </BasicHeaderNavItem>
-        {:else}
-          <BasicHeaderNavItem href="/login">Login</BasicHeaderNavItem>
-        {/if}
+        <BasicHeaderNavItem href="/dashboard">
+          {loginUser.email}
+        </BasicHeaderNavItem>
       </div>
     </div>
   </Container>

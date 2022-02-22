@@ -6,6 +6,7 @@
 
   function onLogoutClick() {
     setLoginUser(null);
+    location.assign("/");
   }
 </script>
 

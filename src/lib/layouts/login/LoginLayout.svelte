@@ -11,7 +11,7 @@
 
   loginUser.subscribe((newLoginUser) => {
     if (!initialLoginUser && newLoginUser) {
-      location.reload();
+      location.assign("/dashboard");
     }
   });
 </script>

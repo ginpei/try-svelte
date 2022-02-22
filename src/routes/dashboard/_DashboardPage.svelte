@@ -12,7 +12,7 @@
   <BasicHeading>Dashboard</BasicHeading>
   <div>Hi, {$loginUser?.email}</div>
   <div>
-    <a href="/login">Logout...</a>
+    <a href="logout">Logout...</a>
   </div>
   <div>
     <a href="/notes">Note list</a>
