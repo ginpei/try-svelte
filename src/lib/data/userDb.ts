@@ -13,7 +13,7 @@ export async function findLoginUser(
   password: string
 ): Promise<User | null> {
   const user = users.find((v) => v.email === email);
-  if (user?.password !== password) {
+  if (!user || user.password !== password) {
     return null;
   }
 
