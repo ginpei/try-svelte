@@ -37,6 +37,7 @@
 {#if localLoginUser === undefined}
   <LoadingScreen />
 {:else if localLoginUser === null}
+  <!-- most pages requires login -->
   <LoginLayout />
 {:else}
   <BasicLayout loginUser={$loginUser}>
