@@ -7,7 +7,9 @@
   import { toError } from "$lib/utils/errors";
   import { sleep } from "$lib/utils/time";
   import VStack from "$lib/utils/VStack.svelte";
-  import { loginUser } from "../../stores";
+  import { loginUser } from "../../../stores";
+
+  export let title: string;
 
   let email = "test@example.com";
   let password = "123456";
@@ -56,7 +58,7 @@
 </script>
 
 <VStack>
-  <BasicHeading>Login</BasicHeading>
+  <BasicHeading>{title}</BasicHeading>
   {#if loginError}
     <ErrorBox error={loginError} />
   {/if}

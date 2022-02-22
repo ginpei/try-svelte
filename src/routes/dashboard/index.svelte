@@ -1,15 +1,15 @@
-<script lang="ts">
+<script>
   import LoginScreen from "$lib/screens/login/LoginScreen.svelte";
   import { loginUser } from "../../stores";
-  import LogoutPage from "./_LogoutPage.svelte";
+  import DashboardPage from "./_DashboardPage.svelte";
 </script>
 
 <svelte:head>
-  <title>{$loginUser ? "Logout" : "Login"}</title>
+  <title>Dashboard</title>
 </svelte:head>
 
 {#if $loginUser}
-  <LogoutPage />
+  <DashboardPage />
 {:else}
-  <LoginScreen title="Login" />
+  <LoginScreen title="Dashboard" />
 {/if}
