@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { session } from "$app/stores";
   import ErrorBox from "$lib/complex/ErrorBox.svelte";
   import TextField from "$lib/complex/TextField.svelte";
   import { findLoginUser } from "$lib/db/user";
@@ -8,6 +7,7 @@
   import { toError } from "$lib/utils/errors";
   import { sleep } from "$lib/utils/time";
   import VStack from "$lib/utils/VStack.svelte";
+  import { loginUser } from "../../stores";
 
   let email = "test@example.com";
   let password = "123456";
@@ -45,7 +45,7 @@
 
     // TODO extract
     window.sessionStorage.setItem("userId", user.id);
-    session.update((v) => ({ ...v, user }));
+    $loginUser = user;
 
     return {
       ok: true,
