@@ -1,6 +1,6 @@
 <script lang="ts">
   import { loginUser } from "$lib/data/loginUserStore";
-  import LoginScreen from "$lib/screens/login/LoginScreen.svelte";
+  import LoginScreen from "./LoginScreen.svelte";
   import VStack from "$lib/utils/VStack.svelte";
   import BasicFooter from "../common/BasicFooter.svelte";
   import BasicMainContents from "../common/BasicMainContents.svelte";
