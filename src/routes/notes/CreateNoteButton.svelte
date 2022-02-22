@@ -2,6 +2,7 @@
   import type { OnDialogClose } from "$lib/complex/dialog/dialogMeta";
   import CreateNoteDialog from "./CreateNoteDialog.svelte";
 
+  let elButton: HTMLElement;
   let dialogVisible = false;
 
   function onClick() {
@@ -10,12 +11,13 @@
 
   const onDialogClose: OnDialogClose = () => {
     dialogVisible = false;
+    elButton.focus();
   };
 </script>
 
 <div class="CreateNoteButton" on:click={onClick}>
   <div class="content">+</div>
-  <button class="cover">Create</button>
+  <button bind:this={elButton} class="cover">Create</button>
 </div>
 
 {#if dialogVisible}
@@ -58,7 +60,7 @@
     top: 0;
     transition: opacity 200ms;
 
-    .CreateNoteButton:hover & {
+    :where(.CreateNoteButton:hover, .CreateNoteButton:focus-within) & {
       opacity: 1;
       transition: opacity 100ms;
     }
