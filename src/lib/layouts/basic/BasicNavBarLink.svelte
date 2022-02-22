@@ -11,8 +11,11 @@
   .BasicNavBarLink {
     box-sizing: border-box;
     color: white;
-    text-decoration: none;
+    display: grid;
     height: 2rem;
+    line-height: 2rem;
+    place-items: center;
+    text-decoration: none;
 
     &:hover {
       text-decoration: underline;

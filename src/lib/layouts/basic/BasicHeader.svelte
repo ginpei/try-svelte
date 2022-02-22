@@ -47,7 +47,6 @@
   .BasicHeader {
     background-color: black;
     display: grid;
-    line-height: 2rem;
   }
 
   .contents {
