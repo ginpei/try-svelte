@@ -1,7 +1,7 @@
 <script lang="ts">
   import ErrorBox from "$lib/complex/ErrorBox.svelte";
   import TextField from "$lib/complex/TextField.svelte";
-  import { findLoginUser } from "$lib/db/user";
+  import { findLoginUser } from "$lib/data/userDb";
   import BasicHeading from "$lib/layouts/basic/BasicHeading.svelte";
   import NiceButton from "$lib/primaries/NiceButton.svelte";
   import { toError } from "$lib/utils/errors";

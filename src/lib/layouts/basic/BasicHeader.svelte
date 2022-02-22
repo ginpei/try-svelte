@@ -1,6 +1,6 @@
 <script lang="ts">
   import { page } from "$app/stores";
-  import type { User } from "$lib/db/user";
+  import type { User } from "$lib/data/User";
   import Container from "$lib/utils/Container.svelte";
   import logo from "./svelte-logo.svg";
 

@@ -1,4 +1,4 @@
-import { findLoginUser, User } from "$lib/db/user";
+import { findLoginUser, User } from "$lib/data/User";
 import type { RequestHandler } from "@sveltejs/kit";
 
 export interface LoginApiRequest {

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { User } from "$lib/db/user";
+  import type { User } from "$lib/data/User";
   import BasicFooter from "$lib/layouts/basic/BasicFooter.svelte";
   import Header from "$lib/layouts/basic/BasicHeader.svelte";
   import VStack from "$lib/utils/VStack.svelte";

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { getUserById } from "$lib/db/user";
+  import { getUserById } from "$lib/data/userDb";
   import BasicLayout from "$lib/layouts/basic/BasicLayout.svelte";
   import LoadingScreen from "$lib/screens/loading/LoadingScreen.svelte";
   import { loginUser } from "../stores";
