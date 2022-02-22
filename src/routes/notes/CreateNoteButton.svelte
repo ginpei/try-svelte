@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { OnDialogClose } from "$lib/ui/complex/dialog/dialogMeta";
-  import Tile from "$lib/ui/complex/dialog/tile/Tile.svelte";
+  import Tile from "$lib/ui/complex/Tile.svelte";
   import NiceButton from "$lib/ui/primaries/NiceButton.svelte";
   import CreateNoteDialog from "./CreateNoteDialog.svelte";
 

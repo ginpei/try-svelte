@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { Note } from "$lib/data/Note";
-  import Tile from "$lib/ui/complex/dialog/tile/Tile.svelte";
+  import Tile from "$lib/ui/complex/Tile.svelte";
   import NiceButton from "$lib/ui/primaries/NiceButton.svelte";
   import VStack from "$lib/ui/utils/VStack.svelte";
 
