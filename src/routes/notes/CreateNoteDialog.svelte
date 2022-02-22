@@ -5,6 +5,7 @@
   import type { OnDialogClose } from "$lib/complex/dialog/dialogMeta";
   import DialogTitle from "$lib/complex/dialog/DialogTitle.svelte";
   import NiceButton from "$lib/primaries/NiceButton.svelte";
+  import VStack from "$lib/utils/VStack.svelte";
 
   export let onClose: OnDialogClose;
 
@@ -16,7 +17,12 @@
 <DialogFrame {onClose}>
   <DialogTitle {onClose}>Create new note</DialogTitle>
   <DialogBody>
-    <input type="text" />
+    <VStack>
+      <input type="text" />
+      <input autofocus type="text" />
+      <input type="text" />
+      <input type="text" />
+    </VStack>
   </DialogBody>
   <DialogFooter>
     <NiceButton on:click={onOkClick}>OK</NiceButton>

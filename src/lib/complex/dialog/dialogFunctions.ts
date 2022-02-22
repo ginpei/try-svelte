@@ -1,4 +1,10 @@
 export function setFirstFocus(el: Element): void {
+  const autofocus = findAutofocus(el);
+  if (autofocus) {
+    autofocus.focus();
+    return;
+  }
+
   const els = Array.from(findFocusables(el));
   for (const el of els) {
     if (isFirstFocusable(el)) {
@@ -27,6 +33,10 @@ export function moveFocus(el: Element, reversed: boolean): void {
 
   const nextFocusable = focusables[nextIndex];
   nextFocusable.focus();
+}
+
+function findAutofocus(el: Element): HTMLElement | null {
+  return el.querySelector('[autofocus]');
 }
 
 function findFocusables(el: Element): NodeListOf<HTMLElement> {
