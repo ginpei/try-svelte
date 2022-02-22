@@ -3,7 +3,7 @@
   import logo from "../common/svelte-logo.svg";
 </script>
 
-<header class="BasicHeader">
+<header class="LoginHeader">
   <Container>
     <a href="/">
       <img class="titleLogo" src={logo} alt="Try Svelte" />
@@ -12,7 +12,7 @@
 </header>
 
 <style lang="scss">
-  .BasicHeader {
+  .LoginHeader {
     background-color: black;
     display: grid;
     height: 2rem;
