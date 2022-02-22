@@ -1,8 +1,8 @@
 <script lang="ts">
   import type { Note } from "$lib/data/Note";
-
   import BasicHeading from "$lib/layouts/basic/BasicHeading.svelte";
   import VStack from "$lib/utils/VStack.svelte";
+  import CreateNoteButton from "./CreateNoteButton.svelte";
   import NoteListItem from "./NoteListItem.svelte";
 
   let numItems = 10;
@@ -27,6 +27,7 @@
     {numItems}
   </div>
   <div class="noteList">
+    <CreateNoteButton />
     {#each items as item}
       <NoteListItem {item} />
     {/each}
