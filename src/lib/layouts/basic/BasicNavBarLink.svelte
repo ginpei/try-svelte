@@ -9,11 +9,17 @@
 
 <style lang="scss">
   .BasicNavBarLink {
+    box-sizing: border-box;
     color: white;
     text-decoration: none;
+    height: 2rem;
 
     &:hover {
       text-decoration: underline;
+    }
+
+    &.active {
+      border-bottom: 4px solid #09f;
     }
   }
 </style>

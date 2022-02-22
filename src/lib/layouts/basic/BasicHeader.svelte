@@ -47,7 +47,6 @@
   .BasicHeader {
     background-color: black;
     display: grid;
-    height: 2rem;
     line-height: 2rem;
   }
 
@@ -56,7 +55,6 @@
     display: grid;
     gap: 1rem;
     grid-template-columns: max-content auto max-content;
-    height: 2rem;
   }
 
   .titleLogo {
@@ -68,5 +66,6 @@
   .linkList {
     display: flex;
     gap: 1rem;
+    overflow: auto;
   }
 </style>
