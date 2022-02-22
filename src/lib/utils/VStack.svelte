@@ -1,4 +1,8 @@
 <script lang="ts">
+  /**
+   * Extra global class names.
+   * Note that these are not recognized by Svelte's style scope system.
+   */
   export let className = "";
 </script>
 
