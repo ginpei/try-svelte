@@ -1,8 +1,8 @@
 <script lang="ts">
   import ErrorBox from "$lib/complex/ErrorBox.svelte";
   import TextField from "$lib/complex/TextField.svelte";
+  import { setLoginUser } from "$lib/data/loginUserStore";
   import { findLoginUser } from "$lib/data/userDb";
-  import { loginUser } from "$lib/data/loginUserStore";
   import BasicHeading from "$lib/layouts/basic/BasicHeading.svelte";
   import NiceButton from "$lib/primaries/NiceButton.svelte";
   import { toError } from "$lib/utils/errors";
@@ -45,9 +45,7 @@
       };
     }
 
-    // TODO extract
-    window.sessionStorage.setItem("userId", user.id);
-    $loginUser = user;
+    setLoginUser(user);
 
     return {
       ok: true,

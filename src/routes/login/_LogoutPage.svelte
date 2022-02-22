@@ -1,13 +1,11 @@
 <script>
+  import { setLoginUser } from "$lib/data/loginUserStore";
   import BasicHeading from "$lib/layouts/basic/BasicHeading.svelte";
   import NiceButton from "$lib/primaries/NiceButton.svelte";
   import VStack from "$lib/utils/VStack.svelte";
-  import { loginUser } from "$lib/data/loginUserStore";
 
   function onLogoutClick() {
-    // TODO extract
-    window.sessionStorage.removeItem("userId");
-    $loginUser = null;
+    setLoginUser(null);
   }
 </script>
 

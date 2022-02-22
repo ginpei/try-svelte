@@ -1,6 +1,5 @@
 <script lang="ts">
-  import { getUserById } from "$lib/data/userDb";
-  import { loginUser } from "$lib/data/loginUserStore";
+  import { initLoginUser, loginUser } from "$lib/data/loginUserStore";
   import BasicLayout from "$lib/layouts/basic/BasicLayout.svelte";
   import LoginLayout from "$lib/layouts/login/LoginLayout.svelte";
   import LoadingScreen from "$lib/screens/loading/LoadingScreen.svelte";
@@ -8,30 +7,9 @@
   // undefined until it gets the first value; User or null
   let localLoginUser: typeof $loginUser | undefined = undefined;
 
-  _initLoginUser();
-
-  async function _initLoginUser() {
-    if (typeof window === "undefined") {
-      return;
-    }
-
-    const userId = window.sessionStorage.getItem("userId");
-    if (!userId) {
-      loginUser.set(null);
-      localLoginUser = null;
-      return;
-    }
-
-    const user = await getUserById(userId);
-    if (!user) {
-      loginUser.set(null);
-      localLoginUser = null;
-      return;
-    }
-
-    loginUser.set(user);
-    localLoginUser = user;
-  }
+  initLoginUser((newLoginUser) => {
+    localLoginUser = newLoginUser;
+  });
 </script>
 
 {#if localLoginUser === undefined}
