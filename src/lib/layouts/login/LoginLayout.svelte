@@ -1,11 +1,11 @@
 <script lang="ts">
   import { loginUser } from "$lib/data/loginUserStore";
-  import VStack from "$lib/utils/VStack.svelte";
+  import { toDocTitle } from "$lib/utils/page";
   import "../common/global.css";
+  import bgImage from "./jonny-caspari-KuudDjBHIlA-unsplash.squashed.jpg";
   import LoginFooter from "./LoginFooter.svelte";
   import LoginForm from "./LoginForm.svelte";
   import LoginHeader from "./LoginHeader.svelte";
-  import bgImage from "./jonny-caspari-KuudDjBHIlA-unsplash.squashed.jpg";
 
   const initialLoginUser = $loginUser;
 
@@ -15,6 +15,10 @@
     }
   });
 </script>
+
+<svelte:head>
+  <title>{toDocTitle("")}</title>
+</svelte:head>
 
 <div class="LoginLayout">
   <LoginHeader />
