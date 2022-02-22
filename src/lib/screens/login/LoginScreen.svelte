@@ -9,8 +9,6 @@
   import { sleep } from "$lib/utils/time";
   import VStack from "$lib/utils/VStack.svelte";
 
-  export let title: string;
-
   let email = "test@example.com";
   let password = "123456";
   let loginError: Error | null = null;
@@ -56,7 +54,7 @@
 </script>
 
 <VStack>
-  <BasicHeading>{title}</BasicHeading>
+  <BasicHeading>Login</BasicHeading>
   {#if loginError}
     <ErrorBox error={loginError} />
   {/if}

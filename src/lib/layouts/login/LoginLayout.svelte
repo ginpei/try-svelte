@@ -20,7 +20,7 @@
   <LoginHeader />
 
   <BasicMainContents>
-    <LoginScreen title="Login" />
+    <LoginScreen />
   </BasicMainContents>
 
   <BasicFooter />
