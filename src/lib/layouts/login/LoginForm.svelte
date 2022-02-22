@@ -3,7 +3,6 @@
   import TextField from "$lib/complex/TextField.svelte";
   import { setLoginUser } from "$lib/data/loginUserStore";
   import { findLoginUser } from "$lib/data/userDb";
-  import BasicHeading from "$lib/layouts/basic/BasicHeading.svelte";
   import NiceButton from "$lib/primaries/NiceButton.svelte";
   import { toError } from "$lib/utils/errors";
   import { sleep } from "$lib/utils/time";
@@ -53,23 +52,54 @@
   }
 </script>
 
-<VStack>
-  <BasicHeading>Login</BasicHeading>
-  {#if loginError}
-    <ErrorBox error={loginError} />
-  {/if}
-  <form on:submit={onSubmit}>
-    <fieldset disabled={loggingIn}>
-      <VStack>
-        <TextField label="Email" name="email" type="email" bind:value={email} />
-        <TextField
-          label="Password"
-          name="password"
-          type="password"
-          bind:value={password}
-        />
-        <NiceButton>Send</NiceButton>
-      </VStack>
-    </fieldset>
-  </form>
-</VStack>
+<section class="LoginForm">
+  <VStack>
+    <h1 class="heading">Login</h1>
+    {#if loginError}
+      <ErrorBox error={loginError} />
+    {/if}
+    <form on:submit={onSubmit}>
+      <fieldset disabled={loggingIn}>
+        <VStack>
+          <TextField
+            label="Email"
+            name="email"
+            type="email"
+            bind:value={email}
+          />
+          <TextField
+            label="Password"
+            name="password"
+            type="password"
+            bind:value={password}
+          />
+          <NiceButton>Log in</NiceButton>
+        </VStack>
+      </fieldset>
+    </form>
+    <a href="/404">Forgot password</a>
+    <a href="/404">Sign up</a>
+  </VStack>
+</section>
+
+<style>
+  a {
+    color: inherit;
+  }
+
+  .LoginForm {
+    background-image: linear-gradient(180deg, #191927 0%, #441c88 100%);
+    border-radius: 1rem;
+    border: thin solid gray;
+    box-shadow: 0 0 3rem 1rem #0009;
+    box-sizing: border-box;
+    color: white;
+    padding: 3rem;
+    width: 340px;
+  }
+
+  .heading {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+</style>

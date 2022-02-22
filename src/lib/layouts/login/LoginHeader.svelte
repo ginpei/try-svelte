@@ -1,14 +1,9 @@
 <script lang="ts">
-  import Container from "$lib/utils/Container.svelte";
   import logo from "../common/svelte-logo.svg";
 </script>
 
 <header class="LoginHeader">
-  <Container>
-    <a href="/">
-      <img class="titleLogo" src={logo} alt="Try Svelte" />
-    </a>
-  </Container>
+  <img class="titleLogo" src={logo} alt="Try Svelte" />
 </header>
 
 <style lang="scss">
@@ -17,6 +12,7 @@
     display: grid;
     height: 2rem;
     line-height: 2rem;
+    place-items: center;
   }
 
   .titleLogo {
