@@ -1,6 +1,6 @@
 <script lang="ts">
   import LoginScreen from "$lib/screens/login/LoginScreen.svelte";
-  import { loginUser } from "../../stores";
+  import { loginUser } from "$lib/data/userStore";
   import LogoutPage from "./_LogoutPage.svelte";
 </script>
 

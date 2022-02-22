@@ -2,7 +2,7 @@
   import { getUserById } from "$lib/data/userDb";
   import BasicLayout from "$lib/layouts/basic/BasicLayout.svelte";
   import LoadingScreen from "$lib/screens/loading/LoadingScreen.svelte";
-  import { loginUser } from "../stores";
+  import { loginUser } from "$lib/data/userStore";
 
   // undefined until it gets the first value; User or null
   let localLoginUser: typeof $loginUser | undefined = undefined;

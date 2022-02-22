@@ -1,6 +1,6 @@
 <script>
   import LoginScreen from "$lib/screens/login/LoginScreen.svelte";
-  import { loginUser } from "../../stores";
+  import { loginUser } from "$lib/data/userStore";
   import DashboardPage from "./_DashboardPage.svelte";
 </script>
 
