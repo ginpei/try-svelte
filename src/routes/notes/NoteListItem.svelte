@@ -1,19 +1,31 @@
 <script lang="ts">
+  import Tile from "$lib/complex/dialog/tile/Tile.svelte";
   import type { Note } from "$lib/data/Note";
+  import NiceButton from "$lib/primaries/NiceButton.svelte";
+  import VStack from "$lib/utils/VStack.svelte";
 
   export let item: Note;
 </script>
 
-<div class="NoteListItem">
-  <span>{item.name}</span>
-</div>
+<Tile>
+  <div class="content" slot="content">{item.name}</div>
+  <div class="cover" slot="cover">
+    <VStack>
+      <NiceButton>Edit</NiceButton>
+    </VStack>
+  </div>
+</Tile>
 
 <style lang="scss">
-  .NoteListItem {
-    border-radius: 0.2rem;
-    border: thin solid gray;
-    display: block;
-    width: 200px;
-    height: 200px;
+  .content {
+    display: grid;
+    place-items: center;
+  }
+
+  .cover {
+    align-items: center;
+    display: grid;
+    justify-items: stretch;
+    padding: 1rem;
   }
 </style>
