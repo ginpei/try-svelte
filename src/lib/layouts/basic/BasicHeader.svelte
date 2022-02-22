@@ -3,7 +3,7 @@
   import type { User } from "$lib/data/User";
   import Container from "$lib/utils/Container.svelte";
   import BasicHeaderNavItem from "./BasicNavBarLink.svelte";
-  import logo from "./svelte-logo.svg";
+  import logo from "../common/svelte-logo.svg";
 
   export let loginUser: User | null;
 </script>

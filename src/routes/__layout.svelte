@@ -1,8 +1,9 @@
 <script lang="ts">
   import { getUserById } from "$lib/data/userDb";
-  import BasicLayout from "$lib/layouts/basic/BasicLayout.svelte";
-  import LoadingScreen from "$lib/screens/loading/LoadingScreen.svelte";
   import { loginUser } from "$lib/data/userStore";
+  import BasicLayout from "$lib/layouts/basic/BasicLayout.svelte";
+  import LoginLayout from "$lib/layouts/login/LoginLayout.svelte";
+  import LoadingScreen from "$lib/screens/loading/LoadingScreen.svelte";
 
   // undefined until it gets the first value; User or null
   let localLoginUser: typeof $loginUser | undefined = undefined;
@@ -35,6 +36,8 @@
 
 {#if localLoginUser === undefined}
   <LoadingScreen />
+{:else if localLoginUser === null}
+  <LoginLayout />
 {:else}
   <BasicLayout loginUser={$loginUser}>
     <slot />
