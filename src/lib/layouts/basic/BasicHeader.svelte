@@ -2,6 +2,7 @@
   import { page } from "$app/stores";
   import type { User } from "$lib/data/User";
   import Container from "$lib/utils/Container.svelte";
+  import BasicHeaderNavItem from "./BasicNavBarLink.svelte";
   import logo from "./svelte-logo.svg";
 
   export let loginUser: User | null;
@@ -14,33 +15,32 @@
         <img class="titleLogo" src={logo} alt="Try Svelte" />
       </a>
       <nav class="linkList">
-        <a
-          class:active={$page.url.pathname === "/"}
-          href="/"
-          sveltekit:prefetch
+        <BasicHeaderNavItem
+          active={$page.url.pathname === "/dashboard"}
+          href="/dashboard"
         >
-          Home
-        </a>
-        <a
-          class:active={$page.url.pathname === "/about"}
-          href="/about"
-          sveltekit:prefetch
+          Dashboard
+        </BasicHeaderNavItem>
+        <BasicHeaderNavItem
+          active={$page.url.pathname === "/notes"}
+          href="/notes"
         >
-          About
-        </a>
-        <a
-          class:active={$page.url.pathname === "/todos"}
-          href="/todos"
-          sveltekit:prefetch
+          Notes
+        </BasicHeaderNavItem>
+        <BasicHeaderNavItem
+          active={$page.url.pathname === "/templates"}
+          href="/templates"
         >
-          Todos
-        </a>
+          Templates
+        </BasicHeaderNavItem>
       </nav>
       <div class="userTools">
         {#if loginUser}
-          <a href="/dashboard">{loginUser.email}</a>
+          <BasicHeaderNavItem href="/dashboard">
+            {loginUser.email}
+          </BasicHeaderNavItem>
         {:else}
-          <a href="/login">Login</a>
+          <BasicHeaderNavItem href="/login">Login</BasicHeaderNavItem>
         {/if}
       </div>
     </div>
@@ -50,19 +50,9 @@
 <style lang="scss">
   .BasicHeader {
     background-color: black;
-    color: white;
     display: grid;
     height: 2rem;
     line-height: 2rem;
-
-    a {
-      color: inherit;
-      text-decoration: none;
-
-      &:hover {
-        text-decoration: underline;
-      }
-    }
   }
 
   .contents {
