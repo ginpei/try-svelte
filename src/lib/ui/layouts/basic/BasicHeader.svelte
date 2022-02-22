@@ -1,7 +1,7 @@
 <script lang="ts">
   import { page } from "$app/stores";
   import type { User } from "$lib/data/User";
-  import Container from "$lib/utils/Container.svelte";
+  import Container from "$lib/ui/utils/Container.svelte";
   import BasicHeaderNavItem from "./BasicNavBarLink.svelte";
   import logo from "../common/svelte-logo.svg";
 

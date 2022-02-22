@@ -3,9 +3,9 @@
 </script>
 
 <script lang="ts">
-  import BasicHeading from "$lib/layouts/basic/BasicHeading.svelte";
-  import NiceHeading from "$lib/primaries/NiceHeading.svelte";
-  import VStack from "$lib/utils/VStack.svelte";
+  import BasicHeading from "$lib/ui/layouts/basic/BasicHeading.svelte";
+  import NiceHeading from "$lib/ui/primaries/NiceHeading.svelte";
+  import VStack from "$lib/ui/utils/VStack.svelte";
 </script>
 
 <svelte:head>

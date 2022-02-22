@@ -1,7 +1,7 @@
 <script lang="ts">
-  import type { OnDialogClose } from "$lib/complex/dialog/dialogMeta";
-  import Tile from "$lib/complex/dialog/tile/Tile.svelte";
-  import NiceButton from "$lib/primaries/NiceButton.svelte";
+  import type { OnDialogClose } from "$lib/ui/complex/dialog/dialogMeta";
+  import Tile from "$lib/ui/complex/dialog/tile/Tile.svelte";
+  import NiceButton from "$lib/ui/primaries/NiceButton.svelte";
   import CreateNoteDialog from "./CreateNoteDialog.svelte";
 
   let elButton: HTMLButtonElement;

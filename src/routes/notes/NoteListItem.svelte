@@ -1,8 +1,8 @@
 <script lang="ts">
-  import Tile from "$lib/complex/dialog/tile/Tile.svelte";
   import type { Note } from "$lib/data/Note";
-  import NiceButton from "$lib/primaries/NiceButton.svelte";
-  import VStack from "$lib/utils/VStack.svelte";
+  import Tile from "$lib/ui/complex/dialog/tile/Tile.svelte";
+  import NiceButton from "$lib/ui/primaries/NiceButton.svelte";
+  import VStack from "$lib/ui/utils/VStack.svelte";
 
   export let item: Note;
 

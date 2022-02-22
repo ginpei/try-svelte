@@ -1,5 +1,5 @@
 <script lang="ts">
-  import VStack from "$lib/utils/VStack.svelte";
+  import VStack from "$lib/ui/utils/VStack.svelte";
   import Header from "./LoadingHeader.svelte";
 </script>
 

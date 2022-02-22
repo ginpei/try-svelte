@@ -1,9 +1,9 @@
 <script>
   import { setLoginUser } from "$lib/data/loginUserStore";
-  import BasicHeading from "$lib/layouts/basic/BasicHeading.svelte";
-  import NiceButton from "$lib/primaries/NiceButton.svelte";
+  import BasicHeading from "$lib/ui/layouts/basic/BasicHeading.svelte";
+  import NiceButton from "$lib/ui/primaries/NiceButton.svelte";
+  import VStack from "$lib/ui/utils/VStack.svelte";
   import { toDocTitle } from "$lib/utils/page";
-  import VStack from "$lib/utils/VStack.svelte";
 
   function onLogoutClick() {
     setLoginUser(null);
