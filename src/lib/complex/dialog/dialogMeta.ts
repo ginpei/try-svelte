@@ -12,4 +12,4 @@ export const defaultDialogScale: Readonly<ScaleParams> = {
   start: 0.75,
 };
 
-const closeReasons = ["user", "closeButton", "overlay"] as const;
+const closeReasons = ["user", "closeButton", "escape", "overlay"] as const;

@@ -1,7 +1,7 @@
 <script lang="ts">
   export let onClick: (event: MouseEvent) => void;
 
-  let el: HTMLDivElement;
+  export let el: HTMLElement;
 
   function onOverlayClick(event: MouseEvent) {
     // clicked at somewhere inside

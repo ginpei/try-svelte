@@ -12,7 +12,11 @@
   <h1 class="title">
     <slot />
   </h1>
-  <button class="close" title="Close" on:click={onCloseClick}>&times;</button>
+  <button
+    class="close Dialog--no-first-focusable"
+    title="Close"
+    on:click={onCloseClick}>&times;</button
+  >
 </header>
 
 <style>

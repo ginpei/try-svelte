@@ -15,7 +15,9 @@
 
 <DialogFrame {onClose}>
   <DialogTitle {onClose}>Create new note</DialogTitle>
-  <DialogBody>aaa</DialogBody>
+  <DialogBody>
+    <input type="text" />
+  </DialogBody>
   <DialogFooter>
     <NiceButton on:click={onOkClick}>OK</NiceButton>
   </DialogFooter>
