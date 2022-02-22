@@ -6,9 +6,9 @@ export const loginUser = writable<User | null>(null);
 
 export function setLoginUser(user: User | null) {
   if (user) {
-    window.sessionStorage.setItem("userId", user.id);
+    window.localStorage.setItem("userId", user.id);
   } else {
-    window.sessionStorage.removeItem("userId");
+    window.localStorage.removeItem("userId");
   }
   loginUser.set(user);
 };
@@ -18,7 +18,7 @@ export async function initLoginUser(callback: (loginUser: User | null) => void) 
     return;
   }
 
-  const userId = window.sessionStorage.getItem("userId");
+  const userId = window.localStorage.getItem("userId");
   if (!userId) {
     loginUser.set(null);
     callback(null);
