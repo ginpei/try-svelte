@@ -1,6 +1,8 @@
 <script lang="ts">
   import { createEventDispatcher } from "svelte";
 
+  export let el: HTMLButtonElement | undefined = undefined;
+
   const dispatch = createEventDispatcher();
 
   function onEvent(event: Event) {
@@ -8,7 +10,7 @@
   }
 </script>
 
-<button class="NiceButton" on:click={onEvent}>
+<button bind:this={el} class="NiceButton" on:click={onEvent}>
   <slot />
 </button>
 
