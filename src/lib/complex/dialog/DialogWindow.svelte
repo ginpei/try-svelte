@@ -1,4 +1,9 @@
-<div class="DialogWindow">
+<script lang="ts">
+  import { scale } from "svelte/transition";
+  import { defaultDialogScale } from "./dialogMeta";
+</script>
+
+<div class="DialogWindow" in:scale={defaultDialogScale}>
   <slot />
 </div>
 
