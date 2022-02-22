@@ -14,4 +14,7 @@
   <div>
     <a href="/login">Logout...</a>
   </div>
+  <div>
+    <a href="/notes">Note list</a>
+  </div>
 </VStack>
