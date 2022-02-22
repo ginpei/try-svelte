@@ -8,8 +8,10 @@
   let numItems = 10;
 
   $: items = new Array(numItems).fill(0).map<Note>((v, i) => ({
+    createdAt: new Date(`2022-01-${1 + (i % 31)} 12:34:56`).getTime(),
     id: String(i + 1),
     name: `Item ${i + 1}`,
+    thumbnail: `https://placekitten.com/200/${200 + i}`,
   }));
 </script>
 
