@@ -1,11 +1,11 @@
-import type { User } from "./User";
+import { createUser, User } from "./User";
 
 const users: User[] = [
-  {
+  createUser({
     email: "test@example.com",
     id: "user-1",
     password: "123456",
-  },
+  }),
 ];
 
 export async function findLoginUser(
