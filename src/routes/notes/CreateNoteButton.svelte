@@ -1,13 +1,26 @@
 <script lang="ts">
+  import type { OnDialogClose } from "$lib/complex/dialog/dialogMeta";
+  import CreateNoteDialog from "./CreateNoteDialog.svelte";
+
+  let dialogVisible = false;
+
   function onClick() {
-    console.log(`# click`);
+    dialogVisible = true;
   }
+
+  const onDialogClose: OnDialogClose = () => {
+    dialogVisible = false;
+  };
 </script>
 
 <div class="CreateNoteButton" on:click={onClick}>
   <div class="content">+</div>
   <button class="cover">Create</button>
 </div>
+
+{#if dialogVisible}
+  <CreateNoteDialog onClose={onDialogClose} />
+{/if}
 
 <style lang="scss">
   .CreateNoteButton {
