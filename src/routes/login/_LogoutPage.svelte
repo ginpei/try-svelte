@@ -2,7 +2,7 @@
   import BasicHeading from "$lib/layouts/basic/BasicHeading.svelte";
   import NiceButton from "$lib/primaries/NiceButton.svelte";
   import VStack from "$lib/utils/VStack.svelte";
-  import { loginUser } from "$lib/data/userStore";
+  import { loginUser } from "$lib/data/loginUserStore";
 
   function onLogoutClick() {
     // TODO extract

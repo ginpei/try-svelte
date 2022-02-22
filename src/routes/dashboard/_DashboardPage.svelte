@@ -1,7 +1,7 @@
 <script>
   import BasicHeading from "$lib/layouts/basic/BasicHeading.svelte";
   import VStack from "$lib/utils/VStack.svelte";
-  import { loginUser } from "$lib/data/userStore";
+  import { loginUser } from "$lib/data/loginUserStore";
 
   if (!$loginUser) {
     throw new Error("This page is supposed for logged in user");

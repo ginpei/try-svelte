@@ -2,7 +2,7 @@
   import ErrorBox from "$lib/complex/ErrorBox.svelte";
   import TextField from "$lib/complex/TextField.svelte";
   import { findLoginUser } from "$lib/data/userDb";
-  import { loginUser } from "$lib/data/userStore";
+  import { loginUser } from "$lib/data/loginUserStore";
   import BasicHeading from "$lib/layouts/basic/BasicHeading.svelte";
   import NiceButton from "$lib/primaries/NiceButton.svelte";
   import { toError } from "$lib/utils/errors";
