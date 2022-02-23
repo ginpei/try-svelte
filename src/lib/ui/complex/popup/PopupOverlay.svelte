@@ -2,8 +2,8 @@
   import type { OnPopupClose } from "./popupMeta";
 
   export let onClose: OnPopupClose;
-
   export let el: HTMLElement;
+  export let style: svelte.JSX.HTMLAttributes<HTMLElement>["style"] = undefined;
 
   function onOverlayClick(event: MouseEvent) {
     // clicked at somewhere inside
@@ -24,13 +24,13 @@
 
 <svelte:window on:keydown={onKeyDwon} />
 
-<div class="PopupOverlay" bind:this={el} on:click={onOverlayClick}>
+<div class="PopupOverlay" bind:this={el} on:click={onOverlayClick} {style}>
   <slot />
 </div>
 
 <style>
   .PopupOverlay {
-    background-color: #0009;
+    background-color: var(--popup-overlay--background-color, transparent);
     bottom: 0;
     display: grid;
     left: 0;

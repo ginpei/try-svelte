@@ -4,6 +4,7 @@
   import Container from "../../utils/Container.svelte";
   import BasicHeaderNavItem from "./BasicNavBarLink.svelte";
   import logo from "../common/svelte-logo.svg";
+  import UserDropdown from "./UserDropdown.svelte";
 
   export let loginUser: User;
 </script>
@@ -35,9 +36,7 @@
         </BasicHeaderNavItem>
       </nav>
       <div class="userTools">
-        <BasicHeaderNavItem href="/dashboard">
-          {loginUser.email}
-        </BasicHeaderNavItem>
+        <UserDropdown {loginUser} />
       </div>
     </div>
   </Container>
