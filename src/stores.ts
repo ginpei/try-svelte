@@ -1,1 +1,1 @@
-export * from "$lib/data/loginUserStore"
+export * from "./lib/data/loginUserStore"

@@ -1,5 +1,5 @@
 <script>
-  import { toDocTitle } from "$lib/utils/page";
+  import { toDocTitle } from "../../lib/utils/page";
   import NoteListPage from "./_NoteListPage.svelte";
 </script>
 

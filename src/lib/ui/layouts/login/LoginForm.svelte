@@ -1,12 +1,12 @@
 <script lang="ts">
-  import ErrorBox from "$lib/ui/complex/ErrorBox.svelte";
-  import TextField from "$lib/ui/complex/TextField.svelte";
-  import { setLoginUser } from "$lib/data/loginUserStore";
-  import { findLoginUser } from "$lib/data/userDb";
-  import NiceButton from "$lib/ui/primaries/NiceButton.svelte";
-  import { toError } from "$lib/utils/errors";
-  import { sleep } from "$lib/utils/time";
-  import VStack from "$lib/ui/utils/VStack.svelte";
+  import { setLoginUser } from "../../../data/loginUserStore";
+  import { findLoginUser } from "../../../data/userDb";
+  import { toError } from "../../../utils/errors";
+  import { sleep } from "../../../utils/time";
+  import ErrorBox from "../../complex/ErrorBox.svelte";
+  import TextField from "../../complex/TextField.svelte";
+  import NiceButton from "../../primaries/NiceButton.svelte";
+  import VStack from "../../utils/VStack.svelte";
 
   let email = "test@example.com";
   let password = "123456";

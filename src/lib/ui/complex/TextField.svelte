@@ -1,5 +1,5 @@
 <script lang="ts">
-  import NiceTextInput from "$lib/ui/primaries/NiceTextInput.svelte";
+  import NiceTextInput from "../primaries/NiceTextInput.svelte";
 
   export let label: string;
   export let name: string;

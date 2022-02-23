@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { loginUser } from "$lib/data/loginUserStore";
-  import { toDocTitle } from "$lib/utils/page";
+  import { loginUser } from "../../../data/loginUserStore";
+  import { toDocTitle } from "../../../utils/page";
   import "../common/global.css";
   import bgImage from "./jonny-caspari-KuudDjBHIlA-unsplash.squashed.jpg";
   import LoginFooter from "./LoginFooter.svelte";

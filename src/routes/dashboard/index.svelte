@@ -1,8 +1,8 @@
 <script>
-  import { loginUser } from "$lib/data/loginUserStore";
-  import BasicHeading from "$lib/ui/layouts/basic/BasicHeading.svelte";
-  import VStack from "$lib/ui/utils/VStack.svelte";
-  import { toDocTitle } from "$lib/utils/page";
+  import { loginUser } from "../../lib/data/loginUserStore";
+  import BasicHeading from "../../lib/ui/layouts/basic/BasicHeading.svelte";
+  import VStack from "../../lib/ui/utils/VStack.svelte";
+  import { toDocTitle } from "../../lib/utils/page";
 
   if (!$loginUser) {
     throw new Error("This page is supposed for logged in user");

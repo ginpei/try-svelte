@@ -1,7 +1,7 @@
 <script lang="ts">
-  import type { Note } from "$lib/data/Note";
-  import BasicHeading from "$lib/ui/layouts/basic/BasicHeading.svelte";
-  import VStack from "$lib/ui/utils/VStack.svelte";
+  import type { Note } from "../../lib/data/Note";
+  import BasicHeading from "../../lib/ui/layouts/basic/BasicHeading.svelte";
+  import VStack from "../../lib/ui/utils/VStack.svelte";
   import CreateNoteButton from "./CreateNoteButton.svelte";
   import NoteListItem from "./NoteListItem.svelte";
 

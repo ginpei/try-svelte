@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { toError } from "$lib/utils/errors";
+  import { toError } from "../../utils/errors";
 
   export let error: unknown;
 

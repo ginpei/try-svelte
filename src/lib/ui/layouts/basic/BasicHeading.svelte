@@ -1,5 +1,5 @@
 <script>
-  import NiceHeading from "$lib/ui/primaries/NiceHeading.svelte";
+  import NiceHeading from "../../primaries/NiceHeading.svelte";
 </script>
 
 <NiceHeading>
