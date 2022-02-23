@@ -24,11 +24,7 @@
 
 <svelte:window on:keydown={onKeyDwon} />
 
-<PopupOverlay
-  bind:el={elFrame}
-  {onClose}
-  style="--popup-overlay--background-color: #0009"
->
+<PopupOverlay bind:el={elFrame} {onClose} theme={{ backgroundColor: "#0009" }}>
   <DialogWindow>
     <slot />
   </DialogWindow>

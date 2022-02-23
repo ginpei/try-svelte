@@ -1,9 +1,22 @@
+<script context="module" lang="ts">
+  export type PopupOverlayTheme = {
+    backgroundColor?: string;
+  };
+</script>
+
 <script lang="ts">
   import type { OnPopupClose } from "./popupMeta";
 
   export let onClose: OnPopupClose;
   export let el: HTMLElement;
-  export let style: svelte.JSX.HTMLAttributes<HTMLElement>["style"] = undefined;
+  export let theme: PopupOverlayTheme = {};
+
+  $: style = [
+    theme.backgroundColor &&
+      `--popup-overlay--background-color: ${theme.backgroundColor}`,
+  ]
+    .filter((v) => v)
+    .join(";");
 
   function onOverlayClick(event: MouseEvent) {
     // clicked at somewhere inside
