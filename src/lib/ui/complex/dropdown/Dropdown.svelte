@@ -8,7 +8,9 @@
 
   let right = 0;
   let top = 0;
-  let elOverlay: HTMLElement;
+
+  // to avoid "<PopupOverlay> was created without expected prop 'el'"
+  let elOverlay = {} as HTMLElement;
 
   $: dropdownStyle = [
     `--dropdown-top: ${top}px`,

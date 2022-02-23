@@ -7,7 +7,8 @@
 
   export let onClose: OnDialogClose;
 
-  let elFrame: HTMLElement;
+  // to avoid "<PopupOverlay> was created without expected prop 'el'"
+  let elFrame = {} as HTMLElement;
 
   onMount(() => {
     setFirstFocus(elFrame);
