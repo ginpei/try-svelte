@@ -24,11 +24,39 @@
 
 {#if dropdownVisible}
   <Dropdown {elButton} onClose={onDropdownClose}>
-    <div class="dropdown">Yo</div>
+    <div class="dropdown">
+      <ul class="list">
+        <li class="item">
+          <a class="link" href="/profile">Profile</a>
+        </li>
+        <li class="item">
+          <a class="link" href="/404">Settings</a>
+        </li>
+      </ul>
+      <ul class="list">
+        <li class="item">
+          <a class="link" href="/logout">Logout...</a>
+        </li>
+      </ul>
+    </div>
   </Dropdown>
 {/if}
 
-<style>
+<style lang="scss">
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
   button {
     all: initial;
     cursor: pointer;
@@ -42,7 +70,23 @@
   }
 
   .dropdown {
-    border: thin solid tomato;
-    padding: 1rem;
+    background-color: black;
+    border: thin solid gray;
+    box-shadow: 0 0 0.5rem #0006;
+    color: white;
+  }
+
+  .list {
+    & + & {
+      border-top: thin solid gray;
+    }
+  }
+
+  .item {
+    display: grid;
+  }
+
+  .link {
+    padding: 0.5rem 1rem;
   }
 </style>
