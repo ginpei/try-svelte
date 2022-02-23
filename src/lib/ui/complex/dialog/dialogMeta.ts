@@ -1,9 +1,10 @@
 import { quintOut } from "svelte/easing";
 import type { ScaleParams } from "svelte/types/runtime/transition";
+import { OnPopupClose, popupCloseReasons } from "../popup/popupMeta";
 
-export type OnDialogClose = (reason: CloseReason, event: Event) => void;
+export type OnDialogClose = OnPopupClose<DialogCloseReason>;
 
-export type CloseReason = typeof closeReasons[number];
+export type DialogCloseReason = typeof dialogCloseReasons[number];
 
 export const defaultDialogScale: Readonly<ScaleParams> = {
   duration: 200,
@@ -12,4 +13,4 @@ export const defaultDialogScale: Readonly<ScaleParams> = {
   start: 0.75,
 };
 
-const closeReasons = ["user", "closeButton", "escape", "overlay"] as const;
+const dialogCloseReasons = [...popupCloseReasons, "closeButton"] as const;

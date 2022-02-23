@@ -1,5 +1,7 @@
 <script lang="ts">
-  export let onClick: (event: MouseEvent) => void;
+  import type { OnPopupClose } from "./popupMeta";
+
+  export let onClose: OnPopupClose;
 
   export let el: HTMLElement;
 
@@ -9,16 +11,25 @@
       return;
     }
 
-    onClick(event);
+    onClose("overlay", event);
+  }
+
+  function onKeyDwon(event: KeyboardEvent) {
+    if (event.key === "Escape") {
+      onClose("escape", event);
+      return;
+    }
   }
 </script>
 
-<div class="DialogOverlay" bind:this={el} on:click={onOverlayClick}>
+<svelte:window on:keydown={onKeyDwon} />
+
+<div class="PopupOverlay" bind:this={el} on:click={onOverlayClick}>
   <slot />
 </div>
 
 <style>
-  .DialogOverlay {
+  .PopupOverlay {
     background-color: #0009;
     bottom: 0;
     display: grid;
