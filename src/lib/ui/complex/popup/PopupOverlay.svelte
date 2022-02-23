@@ -5,6 +5,8 @@
 </script>
 
 <script lang="ts">
+  import { moveFocus } from "./popupFunctions";
+
   import type { OnPopupClose } from "./popupMeta";
 
   export let onClose: OnPopupClose;
@@ -30,6 +32,12 @@
   function onKeyDwon(event: KeyboardEvent) {
     if (event.key === "Escape") {
       onClose("escape", event);
+      return;
+    }
+
+    if (event.key === "Tab") {
+      event.preventDefault();
+      moveFocus(el, event.shiftKey);
       return;
     }
   }

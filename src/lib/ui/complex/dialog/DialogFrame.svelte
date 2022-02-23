@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onMount } from "svelte";
+  import { setFirstFocus } from "../popup/popupFunctions";
   import PopupOverlay from "../popup/PopupOverlay.svelte";
-  import { moveFocus, setFirstFocus } from "../popup/popupFunctions";
   import type { OnDialogClose } from "./dialogMeta";
   import DialogWindow from "./DialogWindow.svelte";
 
@@ -13,17 +13,7 @@
   onMount(() => {
     setFirstFocus(elFrame);
   });
-
-  function onKeyDwon(event: KeyboardEvent) {
-    if (event.key === "Tab") {
-      event.preventDefault();
-      moveFocus(elFrame, event.shiftKey);
-      return;
-    }
-  }
 </script>
-
-<svelte:window on:keydown={onKeyDwon} />
 
 <PopupOverlay bind:el={elFrame} {onClose} theme={{ backgroundColor: "#0009" }}>
   <DialogWindow>

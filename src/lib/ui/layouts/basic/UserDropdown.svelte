@@ -14,6 +14,7 @@
 
   const onDropdownClose: OnPopupClose = () => {
     dropdownVisible = false;
+    elButton.focus();
   };
 </script>
 
@@ -52,7 +53,8 @@
     color: inherit;
     text-decoration: none;
 
-    &:hover {
+    &:hover,
+    &:focus {
       text-decoration: underline;
     }
   }
@@ -67,6 +69,11 @@
     color: white;
     height: 2rem;
     line-height: 2rem;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
   }
 
   .dropdown {
