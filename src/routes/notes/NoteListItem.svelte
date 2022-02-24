@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { goto } from "$app/navigation";
   import type { Note } from "../../lib/data/Note";
   import Tile from "../../lib/ui/complex/Tile.svelte";
   import NiceButton from "../../lib/ui/primaries/NiceButton.svelte";
@@ -13,6 +14,10 @@
     };
     const dateTimeFormat = new Intl.DateTimeFormat("default", options);
     return dateTimeFormat.format(n);
+  }
+
+  function onEditClick() {
+    goto(`/paints/${item.id}/edit`);
   }
 </script>
 
@@ -30,7 +35,7 @@
   </div>
   <div class="cover" slot="cover">
     <VStack>
-      <NiceButton>Edit</NiceButton>
+      <NiceButton on:click={onEditClick}>Edit</NiceButton>
     </VStack>
   </div>
 </Tile>
